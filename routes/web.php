@@ -14,5 +14,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
-});
+
+    $user = [
+        'name' => "Enrico",
+        'surname' => "Piombini",
+        'role' => "admin",
+    ];
+
+   
+
+    return view('home', [
+        "user" => $user,
+        
+    ]);
+}) ->name("home"); 
+
+
+Route::get("/about-us", function () {
+    return "<h1>Pagina info</h1>";
+})->name("about_us");
+
+Route::get("/contacts", function () {
+    return "<h1>Pagina contatti</h1>";
+})->name("contacts");
+
